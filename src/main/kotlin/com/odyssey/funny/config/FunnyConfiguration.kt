@@ -2,12 +2,12 @@ package com.odyssey.funny.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
+import org.springframework.web.reactive.function.client.WebClient
 
 @Configuration
-open class FunnyConfiguration {
+class FunnyConfiguration {
     @Bean
-    open fun restTemplate(): RestTemplate {
-        return RestTemplate()
+    fun webClient(): WebClient {
+        return WebClient.create()
     }
 }
